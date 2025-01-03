@@ -38,7 +38,7 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-12">
-                                    <input type="submit" name="update_sp" value="Change" class="btn btn-primary waves-effect waves-light">
+                                    <input type="submit" name="update_sitepro" value="Change" class="btn btn-primary waves-effect waves-light">
                                 </div>
                             </div>
                             </form>

@@ -12,61 +12,185 @@
                </div>
            </div>
 
-           <?php 
+        <!-- Flash message -->
+<?php 
 if($this->session->flashdata('msg')): 
     $msg = json_decode($this->session->flashdata('msg'), true);
     $this->session->unset_userdata('msg');
 ?>
-    <div class="alert alert-<?= $msg[0] ? 'success' : 'danger' ?> alert-dismissible fade show" role="alert">
-        <?= $msg[1] ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: '<?= $msg[0] ? "success" : "error" ?>',
+            text: '<?= addslashes($msg[1]) ?>',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'custom-toast <?= $msg[0] ? "success-toast" : "error-toast" ?>'
+            }
+        });
+    });
+    </script>
 <?php endif; ?>
 
-           <!-- Pending Alert -->
-           <?php if($data['account_status'] === 'pending'): ?>
-               <?php $time = $data['account_time'] + 3600; ?>
-               <?php if($time > time()): ?>
-                   <div class="alert alert-success alert-dismissible fade show" role="alert">
-                       <i data-feather="clock" class="me-2"></i>
-                       <?= $this->base->text('account_note', 'paragraph') ?>
-                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                   </div>
-               <?php endif; ?>
-           <?php endif; ?>
+<!-- Account status notifications -->
+<?php if($data['account_status'] === 'pending'): ?>
+    <?php $time = $data['account_time'] + 3600; ?>
+    <?php if($time > time()): ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'info',
+                text: '<?= addslashes($this->base->text('account_note', 'paragraph')) ?>',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: true,
+                customClass: {
+                    popup: 'custom-toast info-toast'
+                }
+            });
+        });
+        </script>
+    <?php endif; ?>
+<?php endif; ?>
 
-           <!-- Status Alerts -->
-           <?php if($data['account_status'] === 'pending'): ?>
-               <div class="alert alert-info alert-dismissible fade show" role="alert">
-                   <i data-feather="info" class="me-2"></i>
-                   <?= $this->base->text('account_pending', 'paragraph') ?>
-                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-           <?php elseif($data['account_status'] === 'reactivating'): ?>
-               <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                   <i data-feather="alert-triangle" class="me-2"></i>
-                   <?= $this->base->text('account_reactivating', 'paragraph') ?>
-                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-           <?php elseif($data['account_status'] === 'deactivating'): ?>
-               <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                   <i data-feather="alert-triangle" class="me-2"></i>
-                   <?= $this->base->text('account_deactivating', 'paragraph') ?>
-                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-           <?php elseif($data['account_status'] === 'suspended'): ?>
-               <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                   <i data-feather="alert-circle" class="me-2"></i>
-                   <?= $this->base->text('account_suspended', 'paragraph') ?>
-                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-           <?php elseif($data['account_status'] === 'deactivated'): ?>
-               <div class="alert alert-success alert-dismissible fade show" role="alert">
-                   <i data-feather="check-circle" class="me-2"></i>
-                   <?= $this->base->text('account_deactivated', 'paragraph') ?>
-                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-           <?php endif; ?>
+<?php if($data['account_status'] === 'pending'): ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'info',
+            text: '<?= addslashes($this->base->text('account_pending', 'paragraph')) ?>',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'custom-toast info-toast'
+            }
+        });
+    });
+    </script>
+<?php elseif($data['account_status'] === 'reactivating'): ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'warning',
+            text: '<?= addslashes($this->base->text('account_reactivating', 'paragraph')) ?>',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'custom-toast warning-toast'
+            }
+        });
+    });
+    </script>
+<?php elseif($data['account_status'] === 'deactivating'): ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'warning', 
+            text: '<?= addslashes($this->base->text('account_deactivating', 'paragraph')) ?>',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'custom-toast warning-toast'
+            }
+        });
+    });
+    </script>
+<?php elseif($data['account_status'] === 'suspended'): ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'error',
+            text: '<?= addslashes($this->base->text('account_suspended', 'paragraph')) ?>',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'custom-toast error-toast'
+            }
+        });
+    });
+    </script>
+<?php elseif($data['account_status'] === 'deactivated'): ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'success',
+            text: '<?= addslashes($this->base->text('account_deactivated', 'paragraph')) ?>',
+            toast: true, 
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'custom-toast success-toast'
+            }
+        });
+    });
+    </script>
+<?php endif; ?>
+
+<style>
+/* Base toast style */
+.custom-toast {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+    max-width: 500px !important;
+    width: auto !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    border-left: 4px solid !important;
+}
+
+/* Success toast */
+.success-toast {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+    border-left-color: #28a745 !important;
+}
+
+/* Error toast */
+.error-toast {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border-left-color: #dc3545 !important;
+}
+
+/* Warning toast */
+.warning-toast {
+    background-color: #fff3cd !important;
+    color: #856404 !important;
+    border-left-color: #ffc107 !important;
+}
+
+/* Info toast */
+.info-toast {
+    background-color: #cce5ff !important;
+    color: #004085 !important;
+    border-left-color: #17a2b8 !important;
+}
+
+.custom-toast .swal2-html-container {
+    margin: 5px 0 !important;
+    text-align: left !important;
+}
+</style>
 
           <!-- Stats Cards -->
 <div class="row">
@@ -141,8 +265,7 @@ if($this->session->flashdata('msg')):
                             <i data-feather="folder" class="font-size-16 align-middle me-2"></i>
                             <?= $this->base->text('file_manager', 'button') ?>
                         </a>
-                    </div>
-
+                    </div>                   
                     <!-- Softaculous -->
                     <div class="col-md-6 col-lg-3">
                         <a href="<?= $data['account_status'] === 'active' ? base_url() . 'account/view/' . $id . '/softaculous' : '#' ?>" 
@@ -152,15 +275,28 @@ if($this->session->flashdata('msg')):
                             <?= $this->base->text('softaculous', 'button') ?>
                         </a>
                     </div>
-
-                    <!-- Settings -->
+                  <!-- Settings -->
                     <div class="col-md-6 col-lg-3">
-                        <a href="<?= $data['account_status'] === 'active' ? base_url() . 'account/settings/' . $id : '#' ?>" 
+                                    <?php if ($data['account_status'] === 'deactivated'): ?>
+                                        <a href="<?= base_url() ?>account/view/<?= $id ?>?reactivate=true" 
+                                           class="btn btn-success w-100 waves-effect waves-light">
+                                            <i data-feather="refresh-cw" class="font-size-16 align-middle me-2"></i>
+                                            Reactivate
+                                        </a>
+                                    <?php elseif ($data['account_status'] === 'suspended'): ?>
+                                        <a href="<?= base_url() ?>ticket/create" 
+                                           class="btn btn-warning w-100 waves-effect waves-light">
+                                            <i data-feather="message-square" class="font-size-16 align-middle me-2"></i>
+                                            Open Ticket
+                                        </a>
+                                    <?php else: ?>
+                         <a href="<?= $data['account_status'] === 'active' ? base_url() . 'account/settings/' . $id : '#' ?>" 
                            class="btn btn-dark w-100 waves-effect waves-light <?= $data['account_status'] !== 'active' ? 'disabled' : '' ?>">
                             <i data-feather="settings" class="font-size-16 align-middle me-2"></i>
                             <?= $this->base->text('settings', 'button') ?>
                         </a>
-                    </div>
+                                    <?php endif; ?>
+                                </div>
                 </div>
             </div>
         </div>
@@ -229,27 +365,35 @@ if($this->session->flashdata('msg')):
     </td>
 </tr>
                                        <tr>
-                                           <th scope="row">
-                                               <div class="d-flex align-items-center">
-                                                   <i data-feather="globe" class="font-size-20 text-primary me-2"></i>
-                                                   <?= $this->base->text('domain', 'table') ?>
-                                               </div>
-                                           </th>
-                                           <td>
-                                               <?php if($data['account_status'] === 'active'): ?>
-                                                   <?php $domains = $this->account->get_domains($data['account_username'], $data['account_password'], $data['account_domain']) ?>
-                                                   <?php if(count($domains) > 0): ?>
-                                                       <?php foreach($domains as $domain): ?>
-                                                           <?= $domain['domain'] ?><br>
-                                                       <?php endforeach; ?>
-                                                   <?php else: ?>
-                                                       <?= $this->base->text('domain_list', 'paragraph') ?>
-                                                   <?php endif; ?>
-                                               <?php else: ?>
-                                                   <?= $this->base->text('domain_list', 'paragraph') ?>
-                                               <?php endif; ?>
-                                           </td>
-                                       </tr>
+    <th scope="row">
+        <div class="d-flex align-items-center">
+            <i data-feather="globe" class="font-size-20 text-primary me-2"></i>
+            <?= $this->base->text('domain', 'table') ?>
+        </div>
+    </th>
+    <td>
+        <?php if($data['account_status'] === 'active'): ?>
+            <?php $domains = $this->account->get_domains($data['account_username'], $data['account_password'], $data['account_domain']) ?>
+            <?php if(count($domains) > 0): ?>
+                <?php foreach($domains as $domain): ?>
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span><?= $domain['domain'] ?></span>
+                        <a href="<?= base_url('account/view/'.$id.'/builder?domain='.$domain['domain']) ?>" 
+                           class="btn btn-sm btn-primary waves-effect waves-light"
+                           target="_blank">
+                             <i class="fas fa-paint-brush me-2"></i>
+                            SitePro
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <?= $this->base->text('domain_list', 'paragraph') ?>
+            <?php endif; ?>
+        <?php else: ?>
+            <?= $this->base->text('domain_list', 'paragraph') ?>
+        <?php endif; ?>
+    </td>
+</tr>
                                    </tbody>
                                </table>
                            </div>
