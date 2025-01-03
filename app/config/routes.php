@@ -60,6 +60,7 @@ $route['admin/reset/password/(:any)'] = 'a/reset_password/$1';
 $route['404_override'] = 'e/error_404';
 $route['translate_uri_dashes'] = FALSE;
 $route['language/change/(:any)'] = 'language/change/$1';
+$route['account/view/(:any)/builder'] = 'u/view_account/$1/builder';
 $route['login'] = "u/login";
 $route['register'] = "u/register";
 $route['forget'] = "u/forget";
