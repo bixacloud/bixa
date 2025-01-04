@@ -36,10 +36,10 @@ class E extends CI_Controller
 		$this->load->view($this->base->get_template() . '/errors/custom/license');
 	}
 
-	function tos()
+	function documentation()
 	{
-		$this->load->view($this->base->get_template() . '/errors/custom/tos');
-	}
+		$this->load->view($this->base->get_template() . '/errors/custom/documentation');
+	}function donate()	{		$this->load->view($this->base->get_template() . '/errors/custom/donate');	}	function tos()	{		$this->load->view($this->base->get_template() . '/errors/custom/tos');	}
 
 	function update()
 	{
