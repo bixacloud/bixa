@@ -126,13 +126,13 @@
                                     </span>
                                 </a>
 
-                                <!-- PayPal -->
-                                <a href="https://paypal.me/bixacloud" target="_blank" 
+                                <!-- Patreon -->
+                                <a href="https://www.patreon.com/c/bixacloud" target="_blank" 
                                    class="btn btn-lg btn-info d-flex align-items-center justify-content-center">
-                                    <i class="bx bxl-paypal fs-3 me-2"></i>
+                                    <i class="bx bx-dollar-circle fs-3 me-2"></i>
                                     <span>
-                                        <span class="d-block fw-bold">Donate via PayPal</span>
-                                        <small>One-time or recurring payment</small>
+                                        <span class="d-block fw-bold">Support on Patreon</span>
+                                        <small>Become a monthly patron</small>
                                     </span>
                                 </a>
 
