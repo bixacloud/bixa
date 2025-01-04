@@ -157,13 +157,7 @@
             <!-- Left Sidebar -->
             <div class="col-lg-3 border-end">
                 <div class="doc-nav p-3">
-                    <div class="mb-4">
-                        <form class="position-relative">
-                            <input type="search" class="form-control" placeholder="Search documentation...">
-                            <i class="bx bx-search position-absolute top-50 end-0 translate-middle-y me-2"></i>
-                        </form>
-                    </div>
-
+                  
                     <nav class="nav flex-column nav-pills">
                         <div class="nav-heading mb-2 text-muted fw-bold small text-uppercase">Getting Started</div>
                         <a class="nav-link active" href="#introduction">Introduction</a>
