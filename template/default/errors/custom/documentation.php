@@ -908,7 +908,7 @@
                         <div class="border-top mt-5 pt-4">
                             <p class="text-muted text-center">
                                 Still have questions? Contact us at 
-                                <a href="mailto:support@bixacloud.com">support@bixacloud.com</a>
+                                <a href="mailto:hi@bixa.app">hi@bixa.app</a>
                             </p>
                         </div>
                     </div>
