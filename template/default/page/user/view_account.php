@@ -2,7 +2,6 @@
 <div class="main-content">
    <div class="page-content">
        <div class="container-fluid">
-
            <!-- Page Title -->
            <div class="row">
                <div class="col-12">
@@ -191,8 +190,7 @@ if($this->session->flashdata('msg')):
     text-align: left !important;
 }
 </style>
-
-          <!-- Stats Cards -->
+<!-- Stats Cards -->
 <div class="row">
     <!-- Status Card -->
     <div class="col-md-6 col-lg-3">
@@ -225,10 +223,10 @@ if($this->session->flashdata('msg')):
         </div>
     </div>
 
-    <!-- Placeholder Stats Cards -->
+    <!-- Stats Cards -->
     <?php foreach(['disk', 'bandwidth', 'inodes'] as $stat): ?>
     <div class="col-md-6 col-lg-3">
-        <div class="card stat-card" data-stat="<?= $stat ?>">
+        <div class="card stat-card" data-stat="<?= $stat ?>" style="display: none;">
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-center" style="min-height: 120px;">
                     <div class="spinner-border text-primary" role="status">
@@ -250,6 +248,7 @@ if($this->session->flashdata('msg')):
                     <!-- Control Panel -->
                     <div class="col-md-6 col-lg-3">
                         <a href="<?= $data['account_status'] === 'active' ? base_url() . 'account/view/' . $id . '/cpanel' : '#' ?>" 
+                           onclick="handleCpanelLogin()"
                            class="btn btn-primary w-100 waves-effect waves-light <?= $data['account_status'] !== 'active' ? 'disabled' : '' ?>"
                            target="_blank">
                             <i data-feather="monitor" class="font-size-16 align-middle me-2"></i>
@@ -302,8 +301,7 @@ if($this->session->flashdata('msg')):
         </div>
     </div>
 </div>
-
-           <!-- Account Info & Connection Info -->
+<!-- Account Info & Connection Info -->
            <div class="row">
                <!-- Account Info -->
                <div class="col-lg-8">
@@ -460,6 +458,23 @@ if($this->session->flashdata('msg')):
 </div>
 
 <script>
+// Constants
+const CPANEL_LOGIN_KEY = 'cpanel_first_login_<?= $data['account_username'] ?>';
+
+// Handle cPanel login and initialize stats
+function handleCpanelLogin() {
+    // Set flag đã đăng nhập cPanel
+    localStorage.setItem(CPANEL_LOGIN_KEY, '1');
+    
+    // Delay 2s rồi mới load stats để đợi session cPanel
+    setTimeout(() => {
+        document.querySelectorAll('[data-stat]').forEach(card => {
+            card.style.display = 'block';
+        });
+        loadAccountStats();
+    }, 20000);
+}
+
 function loadAccountStats() {
     const accountId = '<?= $data['account_username'] ?>';
     console.log('Loading stats for:', accountId);
@@ -620,10 +635,6 @@ function retryLoadStats() {
     setTimeout(loadAccountStats, 1000);
 }
 
-// Initialize if account is active
-if ('<?= $data['account_status'] ?>' === 'active') {
-    loadAccountStats();
-}
 function togglePassword() {
     const hidden = document.getElementById('password-hidden');
     const shown = document.getElementById('password-shown');
@@ -636,8 +647,27 @@ function togglePassword() {
         shown.classList.remove('d-none');
     }
 }
-// Initialize feather icons
-if (typeof feather !== 'undefined') {
-    feather.replace();
-}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if account is active and already logged into cPanel
+    if('<?= $data['account_status'] ?>' === 'active') {
+        const hasCpanelLogin = localStorage.getItem(CPANEL_LOGIN_KEY);
+        if(hasCpanelLogin) {
+            document.querySelectorAll('[data-stat]').forEach(card => {
+                card.style.display = 'block';
+            });
+            loadAccountStats();
+        } else {
+            document.querySelectorAll('[data-stat]').forEach(card => {
+                card.style.display = 'none';
+            });
+        }
+    }
+    
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+});
 </script>
