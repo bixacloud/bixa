@@ -461,31 +461,47 @@ if($this->session->flashdata('msg')):
             </div>
             <div class="card-body">
                 <div class="row">
-                    <!-- Hits Chart -->
-                    <div class="col-md-12 mb-4">
-                        <div class="chart-container" style="position: relative; height:300px;">
-                            <canvas id="hitsChart"></canvas>
+                    <!-- Hits Chart - Cột 1 Hàng 1 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="chart-container" style="position: relative; height:300px;">
+                                    <canvas id="hitsChart"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Inodes Chart -->
-                    <div class="col-md-12 mb-4">
-                        <div class="chart-container" style="position: relative; height:300px;">
-                            <canvas id="inodesChart"></canvas>
+                    <!-- Inodes Chart - Cột 2 Hàng 1 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="chart-container" style="position: relative; height:300px;">
+                                    <canvas id="inodesChart"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Bandwidth Chart -->
-                    <div class="col-md-12 mb-4">
-                        <div class="chart-container" style="position: relative; height:300px;">
-                            <canvas id="bandwidthChart"></canvas>
+                    <!-- Bandwidth Chart - Cột 1 Hàng 2 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="chart-container" style="position: relative; height:300px;">
+                                    <canvas id="bandwidthChart"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Disk Space Chart -->
-                    <div class="col-md-12 mb-4">
-                        <div class="chart-container" style="position: relative; height:300px;">
-                            <canvas id="diskspaceChart"></canvas>
+                    <!-- Disk Space Chart - Cột 2 Hàng 2 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="chart-container" style="position: relative; height:300px;">
+                                    <canvas id="diskspaceChart"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
