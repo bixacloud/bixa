@@ -2291,6 +2291,40 @@ public function check_domain_cloudflare($domain = null)
     $this->load->view($this->base->get_template().'/page/includes/user/navbar');
     $this->load->view($this->base->get_template().'/page/user/check_domain_cloudflare');
     $this->load->view($this->base->get_template().'/page/includes/user/footer');
-}	
+}
+  public function get_stats_data($id = null) {
+    if(!$this->user->is_logged()) {
+        echo json_encode(['error' => 'Not logged in']);
+        return;
+    }
+
+    header('Content-Type: application/json');
+    
+    try {
+        $account = $this->account->get_user_account($id);
+        if(!$account || $account['account_status'] !== 'active') {
+            throw new Exception('Invalid account');
+        }
+
+        $stats = $this->vistapanel->get_usage_stats(
+            $account['account_username'],
+            $account['account_password']
+        );
+
+        if($stats === false) {
+            throw new Exception('Failed to fetch stats');
+        }
+
+        echo json_encode([
+            'success' => true,
+            'data' => $stats
+        ]);
+    } catch(Exception $e) {
+        echo json_encode([
+            'success' => false,
+            'error' => $e->getMessage()
+        ]);
+    }
+}
 }
 

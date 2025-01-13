@@ -451,12 +451,55 @@ if($this->session->flashdata('msg')):
                        </div>
                    </div>
                </div>
+               <input type="hidden" id="accountId" value="<?= $id ?>">
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">Usage Statistics</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Hits Chart -->
+                    <div class="col-md-12 mb-4">
+                        <div class="chart-container" style="position: relative; height:300px;">
+                            <canvas id="hitsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Inodes Chart -->
+                    <div class="col-md-12 mb-4">
+                        <div class="chart-container" style="position: relative; height:300px;">
+                            <canvas id="inodesChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Bandwidth Chart -->
+                    <div class="col-md-12 mb-4">
+                        <div class="chart-container" style="position: relative; height:300px;">
+                            <canvas id="bandwidthChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Disk Space Chart -->
+                    <div class="col-md-12 mb-4">
+                        <div class="chart-container" style="position: relative; height:300px;">
+                            <canvas id="diskspaceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
            </div>
 
        </div>
    </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <script>
 // Constants
 const CPANEL_LOGIN_KEY = 'cpanel_first_login_<?= $data['account_username'] ?>';
@@ -668,6 +711,153 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize feather icons
     if (typeof feather !== 'undefined') {
         feather.replace();
+    }
+});
+  document.addEventListener('DOMContentLoaded', function() {
+    // Khởi tạo các biểu đồ
+    const charts = {};
+    const chartColors = {
+        usage: '#8884d8',
+        limit: '#ff0000',
+        average: '#82ca9d'
+    };
+
+    // Khởi tạo biểu đồ cho từng loại thống kê
+    function initChart(elementId, title, yAxisLabel) {
+        const ctx = document.getElementById(elementId).getContext('2d');
+        return new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Usage',
+                        data: [],
+                        borderColor: chartColors.usage,
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Limit',
+                        data: [],
+                        borderColor: chartColors.limit,
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        fill: false
+                    },
+                    {
+                        label: '11-day Average',
+                        data: [],
+                        borderColor: chartColors.average,
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: title
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: yAxisLabel
+                        },
+                        suggestedMin: 0
+                    }
+                }
+            }
+        });
+    }
+
+    // Khởi tạo tất cả biểu đồ
+    charts.inodes = initChart('inodesChart', 'Inodes Usage', 'Files');
+    charts.bandwidth = initChart('bandwidthChart', 'Bandwidth Usage', 'MB');
+    charts.diskspace = initChart('diskspaceChart', 'Disk Space Usage', 'MB');
+    charts.hits = initChart('hitsChart', 'Daily Hits Usage', 'Hits');
+
+    // Hàm cập nhật dữ liệu cho biểu đồ
+    function updateChart(chart, data) {
+        const dates = data.history.map(item => item.date);
+        const values = data.history.map(item => item.value);
+        
+        // Tính trung bình 11 ngày
+        const movingAverage = calculateMovingAverage(values, 11);
+        
+        // Cập nhật dữ liệu
+        chart.data.labels = dates;
+        chart.data.datasets[0].data = values;
+        chart.data.datasets[1].data = Array(dates.length).fill(data.limit);
+        chart.data.datasets[2].data = movingAverage;
+        
+        chart.update();
+    }
+
+    // Tính trung bình động
+    function calculateMovingAverage(values, window) {
+        const result = [];
+        
+        for(let i = 0; i < values.length; i++) {
+            if(i < window - 1) {
+                result.push(null);
+                continue;
+            }
+            
+            let sum = 0;
+            for(let j = 0; j < window; j++) {
+                sum += values[i - j];
+            }
+            result.push(sum / window);
+        }
+        
+        return result;
+    }
+
+    // Hàm load dữ liệu
+    function loadStats(accountId) {
+        fetch(`${baseUrl}u/get_stats_data/${accountId}`)
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    Object.keys(charts).forEach(type => {
+                        updateChart(charts[type], data.data[type]);
+                    });
+                } else {
+                    console.error('Error loading stats:', data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching stats:', error);
+            });
+    }
+
+    // Load dữ liệu ban đầu
+    const accountId = document.getElementById('accountId').value;
+    if(accountId) {
+        loadStats(accountId);
+        
+        // Refresh mỗi 5 phút
+        setInterval(() => loadStats(accountId), 5 * 60 * 1000);
     }
 });
 </script>
