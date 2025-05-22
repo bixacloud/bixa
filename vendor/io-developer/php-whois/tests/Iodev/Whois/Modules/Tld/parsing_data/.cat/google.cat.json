@@ -1,0 +1,21 @@
+{
+  "domainName": "google.cat",
+  "whoisServer": "whois.markmonitor.com",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2006-02-14T08:55:44.988Z",
+  "expirationDate": "2018-02-14T08:55:44.988Z",
+  "updatedDate": "2017-01-19T19:25:28.523Z",
+  "states": [
+    "clientdeleteprohibited",
+    "clienttransferprohibited",
+    "clientupdateprohibited"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "MarkMonitor"
+}

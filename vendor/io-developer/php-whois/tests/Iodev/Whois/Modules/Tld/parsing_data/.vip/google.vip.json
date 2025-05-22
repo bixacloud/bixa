@@ -1,0 +1,21 @@
+{
+  "domainName": "google.vip",
+  "whoisServer": "",
+  "nameServers": [
+    "ns3.googledomains.com",
+    "ns4.googledomains.com",
+    "ns1.googledomains.com",
+    "ns2.googledomains.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2016-03-12T00:40:52Z",
+  "expirationDate": "2020-03-12T00:40:52Z",
+  "updatedDate": "2019-02-14T19:53:10Z",
+  "states": [
+    "clientdeleteprohibited",
+    "clienttransferprohibited",
+    "clientupdateprohibited"
+  ],
+  "owner": "REDACTED FOR PRIVACY",
+  "registrar": "MarkMonitor Inc."
+}

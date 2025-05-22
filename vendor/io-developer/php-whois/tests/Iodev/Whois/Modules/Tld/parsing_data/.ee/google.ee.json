@@ -1,0 +1,18 @@
+{
+  "domainName": "google.ee",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "creationDate": "2010-07-04T04:34:46+0300",
+  "expirationDate": "2018-11-09T00:00:00",
+  "updatedDate": "2017-10-09T20:10:09+0300",
+  "states": [
+    "ok"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "Zone Media OÜ"
+}

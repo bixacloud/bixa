@@ -1,0 +1,61 @@
+{
+    "name": "rappasoft/laravel-authentication-log",
+    "description": "Log user authentication details and send new device notifications.",
+    "keywords": [
+        "rappasoft",
+        "laravel",
+        "laravel-authentication-log"
+    ],
+    "homepage": "https://github.com/rappasoft/laravel-authentication-log",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anthony Rappa",
+            "email": "rappa819@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^10.0|^11.0",
+        "spatie/laravel-package-tools": "^1.4.3"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.2",
+        "spatie/laravel-ray": "^1.29",
+        "vimeo/psalm": "^4.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rappasoft\\LaravelAuthenticationLog\\": "src",
+            "Rappasoft\\LaravelAuthenticationLog\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rappasoft\\LaravelAuthenticationLog\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rappasoft\\LaravelAuthenticationLog\\LaravelAuthenticationLogServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,29 @@
+{
+    "name": "itronic/acme-client",
+    "description": "ACME v2 Client để quản lý SSL Certificate",
+    "version": "1.0.0",
+    "type": "library", 
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "Itronic\\AcmeClient\\": "src/"
+        },
+        "files": [
+            "src/itr-acme-client.php"
+        ]
+    },
+    "require": {
+        "php": "^8.2",
+        "ext-openssl": "*",
+        "ext-curl": "*",
+        "psr/log": "^3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Itronic\\AcmeClient\\AcmeClientServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

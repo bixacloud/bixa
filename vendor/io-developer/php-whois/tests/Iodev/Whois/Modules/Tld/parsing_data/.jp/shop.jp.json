@@ -1,0 +1,17 @@
+{
+  "domainName": "shop.jp",
+  "whoisServer": "",
+  "nameServers": [
+    "ns01.kikakuya.com",
+    "ns02.kikakuya.net",
+    "ns03.kikakuya.ne.jp"
+  ],
+  "creationDate": "2001-03-26T00:00:00Z",
+  "expirationDate": "2020-03-31T00:00:00Z",
+  "updatedDate": "2019-04-01T01:12:57+0900",
+  "states": [
+    "active"
+  ],
+  "owner": "ISHARE .INC",
+  "registrar": ""
+}

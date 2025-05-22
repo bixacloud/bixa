@@ -1,0 +1,80 @@
+{
+  "headerKey": "__HEADER__",
+  "domainKeys": [
+    "~^(complete\\s+)?domain([_\\s]*name)?(\\s+\\(.+?\\))?$~ui",
+    "~^(Dominio|query)$~ui"
+  ],
+  "whoisServerKeys": [
+    "~^(registrar\\s+)?whois([_\\s]*server)?$~ui"
+  ],
+  "nameServersKeys": [
+    "~^(Domain\\s+)?\\s*name[_\\s]*servers?(\\s+\\(.+?\\))?$~ui",
+    "~^(Domain|dns)\\s+(name\\s*)?servers(in\\s+listed\\s+order)?$~ui",
+    "~^(nserver|name\\s+server\\s+handle|host\\s?name|dns|name)$~ui",
+    ["~^(primary|secondary|third|fourth)\\s+server(\\s+hostname)?$~ui"],
+    ["~^ns_name_\\d+$~ui"]
+  ],
+  "nameServersKeysGroups": [
+    [
+      "~^(ns\\s+1|primary\\s+server(\\s+hostname)?|ns_name_01)$~ui",
+      "~^(ns\\s+2|secondary\\s+server(\\s+hostname)?|ns_name_02)$~ui",
+      "~^(ns\\s+3|third\\s+server(\\s+hostname)?|ns_name_03)$~ui",
+      "~^(ns\\s+4|fourth\\s+server(\\s+hostname)?|ns_name_04)$~ui"
+    ]
+  ],
+  "dnssecKeys": [
+    "~^dnssec$~ui"
+  ],
+  "creationDateKeys": [
+    "~^(domain\\s+)?(creation|registration)\\s*date$~ui",
+    "~^domain\\s+(created|registered)$~ui",
+    "~^(record\\s+)?created|registered(\\s+(on|date))?$~ui",
+    "~^registration|activation(\\s+time)?$~ui",
+    "~^(Fecha\\s+de\\s+registro|Relevant\\s+dates)$~ui"
+  ],
+  "expirationDateKeys": [
+    "~^(domain|registry|registrar|registrar\\s+registration)?\\s*(expiration|expires|expiry|exp)[-\\s]*(date|time|on)$~ui",
+    "~^Record\\s+will\\s+expire\\s+on|expiry|expires|expire|expiration|paid-till|renewal\\s+date|renewal|valid\\s+until|validity$~ui",
+    "~^(Fecha\\s+de\\s+vencimiento|Relevant\\s+Dates)$~ui"
+  ],
+  "updatedDateKeys": [
+    "~^(Modified|Modification)[-_\\s]Date$~ui",
+    "~^(Domain)?[-_\\s]?(Date)?[-_\\s]?(Last)?[-_\\s]?Modified$~ui",
+    "~^(Record|Domain)?[-_\\s]?(Last)?[-_\\s]?(Modified|Updated|Update)[-_\\s]?(Date|On)?$~ui",
+    "~^Changed[-_\\s]?(Date)?$~ui",
+    "~^Derniere\\s+modification$~ui"
+  ],
+  "ownerKeys": [
+    "~^Owner[-_\\s](Orgname|Organization)$~ui",
+    "~^Owner([-_\\s]Name)?$~ui",
+    "~^(Registrant)?[-_\\s]?(Internationalized|International|Contact)?[-_\\s]?(Organization|Organisation|Organizacion)[-_\\s]?(Loc|Name)?$~ui",
+    "~^Registrant[-_\\s]?(Name)?$~ui",
+    "~^Domain[-_\\s]Holder[-_\\s]?(Handle)?$~ui",
+    "~^Holder(-c)?$~ui",
+    "~^Org[-_\\s]?(Name)?$~ui",
+    "~^Tech[-_\\s]Organization$~ui",
+    "~^Admin[-_\\s]Organization$~ui",
+    "~^Contact[-_\\s]Name$~ui",
+    "~^(Name|Last[-_\\s]Name|First[-_\\s]Name|Descr)$~ui"
+  ],
+  "registrarKeys": [
+    "~^(Current|Sponsoring)?[-_\\s]?Registr?ar[-_\\s]?(Name|Organization|Handle|Created)?$~ui",
+    "~^Authorized[\\s]Agency$~ui"
+  ],
+  "statesKeys": [
+    "~^(Domain|Registry|Registration|Ren|Epp)[-_\\s]?(Status|State)$~ui",
+    "status",
+    "state",
+    "query_status"
+  ],
+  "notRegisteredStatesDict": {
+    "not registered": 1,
+    "no object found": 1,
+    "not allowed": 1,
+    "available": 1,
+    "free": 1,
+    "220 available": 1,
+    "510 domain is not managed by this register": 1,
+    "440 request denied": 1
+  }
+}

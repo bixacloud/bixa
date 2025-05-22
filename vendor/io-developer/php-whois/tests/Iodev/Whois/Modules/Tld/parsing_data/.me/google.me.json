@@ -1,0 +1,24 @@
+{
+  "domainName": "google.me",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2008-06-13T17:17:40Z",
+  "expirationDate": "2018-06-13T17:17:40Z",
+  "updatedDate": "2017-05-12T09:27:09Z",
+  "states": [
+    "serverupdateprohibited",
+    "servertransferprohibited",
+    "serverdeleteprohibited",
+    "clientupdateprohibited",
+    "clienttransferprohibited",
+    "clientdeleteprohibited"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "MarkMonitor Inc."
+}

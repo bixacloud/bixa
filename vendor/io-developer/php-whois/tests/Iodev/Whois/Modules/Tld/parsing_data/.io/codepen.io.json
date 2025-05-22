@@ -1,0 +1,17 @@
+{
+  "domainName": "codepen.io",
+  "whoisServer": "whois.gandi.net",
+  "nameServers": [
+    "albert.ns.cloudflare.com",
+    "kristin.ns.cloudflare.com"
+  ],
+  "dnssec": "Unsigned",
+  "creationDate": "2012-02-26T02:22:09",
+  "expirationDate": "2019-02-26T02:22:09",
+  "updatedDate": "2018-01-15T16:30:46Z",
+  "states": [
+    "clienttransferprohibited"
+  ],
+  "owner": "CodePen",
+  "registrar": "GANDI SAS"
+}

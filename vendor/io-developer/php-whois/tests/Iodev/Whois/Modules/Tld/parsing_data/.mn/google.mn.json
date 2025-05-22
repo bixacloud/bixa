@@ -1,0 +1,21 @@
+{
+  "domainName": "google.mn",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2003-04-07T00:00:00Z",
+  "expirationDate": "2018-04-07T00:00:00Z",
+  "updatedDate": "2017-03-06T10:25:14Z",
+  "states": [
+    "clientdeleteprohibited",
+    "clienttransferprohibited",
+    "clientupdateprohibited"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "MarkMonitor Inc."
+}

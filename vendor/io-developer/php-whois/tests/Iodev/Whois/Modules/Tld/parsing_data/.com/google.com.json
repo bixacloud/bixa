@@ -1,0 +1,24 @@
+{
+  "domainName": "google.com",
+  "whoisServer": "whois.markmonitor.com",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "1997-09-15T04:00:00Z",
+  "expirationDate": "2020-09-14T04:00:00Z",
+  "updatedDate": "2011-07-20T16:55:31Z",
+  "states": [
+    "clientdeleteprohibited",
+    "clienttransferprohibited",
+    "clientupdateprohibited",
+    "serverdeleteprohibited",
+    "servertransferprohibited",
+    "serverupdateprohibited"
+  ],
+  "owner": "",
+  "registrar": "MarkMonitor Inc."
+}

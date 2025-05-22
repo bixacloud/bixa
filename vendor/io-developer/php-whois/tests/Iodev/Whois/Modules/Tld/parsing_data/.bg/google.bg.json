@@ -1,0 +1,19 @@
+{
+  "domainName": "google.bg",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.net",
+    "ns2.google.net",
+    "ns3.google.net",
+    "ns4.google.net"
+  ],
+  "dnssec": "Inactive",
+  "creationDate": "",
+  "expirationDate": "",
+  "updatedDate": "",
+  "states": [
+    "registered"
+  ],
+  "owner": "Google Inc.",
+  "registrar": ""
+}

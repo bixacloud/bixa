@@ -1,0 +1,25 @@
+{
+  "domainName": "google.gy",
+  "whoisServer": "whois.registry.gy",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2008-05-12T17:56:23.90Z",
+  "expirationDate": "2018-10-04T23:30:00.0Z",
+  "updatedDate": "2017-10-11T02:39:34.456Z",
+  "states": [
+    "serverupdateprohibited",
+    "servertransferprohibited",
+    "serverdeleteprohibited",
+    "clientupdateprohibited",
+    "clienttransferprohibited",
+    "clientrenewprohibited",
+    "clientdeleteprohibited"
+  ],
+  "owner": "google Inc",
+  "registrar": "MarkMonitor"
+}

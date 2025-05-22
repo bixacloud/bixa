@@ -1,0 +1,19 @@
+{
+  "domainName": "google.com.gi",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2003-03-21T05:00:00Z",
+  "expirationDate": "2018-03-21T20:06:52Z",
+  "updatedDate": "2017-09-09T00:24:50Z",
+  "states": [
+    "ok"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "GibNet Registrar"
+}

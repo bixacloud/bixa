@@ -1,0 +1,19 @@
+{
+  "domainName": "google.ro",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "Inactive",
+  "creationDate": "2000-07-17T00:00:00",
+  "expirationDate": "",
+  "updatedDate": "",
+  "states": [
+    "updateprohibited"
+  ],
+  "owner": "",
+  "registrar": "MarkMonitor Inc."
+}

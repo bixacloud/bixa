@@ -1,0 +1,16 @@
+{
+  "domainName": "google.ae",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com"
+  ],
+  "creationDate": "",
+  "expirationDate": "",
+  "updatedDate": "",
+  "states": [
+    "clientupdateprohibited"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "MarkMonitor"
+}

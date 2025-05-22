@@ -1,0 +1,37 @@
+name: PHPUnit
+
+on: [push]
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php_version:
+          - "7.3"
+          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
+          - "8.3"
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
+      with:
+        php_version: "${{ matrix.php_version }}"
+    - uses: php-actions/phpunit@v3
+      with:
+        configuration: "phpunit.xml"
+        php_version: "${{ matrix.php_version }}"
+        version: "9"
+
+  pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
+    - uses: actions/setup-python@v3
+    - uses: pre-commit/action@v3.0.0

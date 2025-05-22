@@ -1,0 +1,17 @@
+{
+  "domainName": "google.co.kr",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "1999-07-28T00:00:00",
+  "expirationDate": "2022-07-28T00:00:00",
+  "updatedDate": "2010-10-04T00:00:00",
+  "states": [],
+  "owner": "Google Korea, LLC",
+  "registrar": "Whois Corp.(http://whois.co.kr)"
+}

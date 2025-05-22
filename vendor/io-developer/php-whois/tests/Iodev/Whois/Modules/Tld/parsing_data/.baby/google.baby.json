@@ -1,0 +1,21 @@
+{
+  "domainName": "google.baby",
+  "whoisServer": "whois.markmonitor.com",
+  "nameServers": [
+    "ns3.googledomains.com",
+    "ns1.googledomains.com",
+    "ns2.googledomains.com",
+    "ns4.googledomains.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2017-09-13T15:25:09.0Z",
+  "expirationDate": "2020-09-13T23:59:59.0Z",
+  "updatedDate": "2019-09-13T10:46:21.0Z",
+  "states": [
+    "clienttransferprohibited",
+    "clientupdateprohibited",
+    "clientdeleteprohibited"
+  ],
+  "owner": "Google LLC",
+  "registrar": "MarkMonitor, Inc (TLDs)"
+}

@@ -1,0 +1,17 @@
+{
+  "domainName": "linux.org",
+  "whoisServer": "",
+  "nameServers": [
+    "mark.ns.cloudflare.com",
+    "lia.ns.cloudflare.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "1994-05-10T04:00:00Z",
+  "expirationDate": "2018-05-11T04:00:00Z",
+  "updatedDate": "2017-06-15T19:14:47Z",
+  "states": [
+    "clienttransferprohibited"
+  ],
+  "owner": "Linux Online, Inc",
+  "registrar": "Network Solutions, LLC"
+}

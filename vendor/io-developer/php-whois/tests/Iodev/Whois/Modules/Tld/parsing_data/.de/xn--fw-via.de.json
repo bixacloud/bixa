@@ -1,0 +1,16 @@
+{
+  "domainName": "xn--fw-via.de",
+  "whoisServer": "",
+  "nameServers": [
+    "ns1.evanzo.com",
+    "ns2.evanzo.com"
+  ],
+  "creationDate": "",
+  "expirationDate": "",
+  "updatedDate": "2012-11-14T11:44:02+0100",
+  "states": [
+    "connect"
+  ],
+  "owner": "",
+  "registrar": ""
+}

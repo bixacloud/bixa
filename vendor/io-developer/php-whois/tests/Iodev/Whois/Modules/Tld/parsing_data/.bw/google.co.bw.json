@@ -1,0 +1,19 @@
+{
+  "domainName": "google.co.bw",
+  "whoisServer": "whois.nic.net.bw",
+  "nameServers": [
+    "ns1.google.com",
+    "ns2.google.com",
+    "ns3.google.com",
+    "ns4.google.com"
+  ],
+  "dnssec": "unsigned",
+  "creationDate": "2012-11-12T22:00:00.0Z",
+  "expirationDate": "2017-12-31T05:00:00.0Z",
+  "updatedDate": "2016-11-28T10:30:45.578Z",
+  "states": [
+    "ok"
+  ],
+  "owner": "Google Inc.",
+  "registrar": "MarkMonitor Inc"
+}

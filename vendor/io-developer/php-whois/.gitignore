@@ -1,0 +1,6 @@
+/.idea/
+/.local/
+/vendor/
+
+docker-compose.local.yml
+composer.lock
