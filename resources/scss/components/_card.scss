@@ -1,0 +1,31 @@
+// 
+// _card.scss
+// 
+
+.card {
+    margin-bottom: $grid-gutter-width;
+}
+
+.card-drop {
+    color: $body-color;
+}
+
+.card-title {
+    font-size: 15.4px;
+    margin: 0 0 7px 0;
+}
+
+.card-title-desc {
+    // color: $card-title-desc;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+
+.card-header-tabs {
+    margin-top: -$card-cap-padding-y;
+}
+
+.card-header-pills {
+    margin: -$card-cap-padding-y * 0.5;
+}

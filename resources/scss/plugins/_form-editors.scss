@@ -1,0 +1,77 @@
+//
+// Form editors.scss
+//
+
+// CK Editor
+
+// ck-editor
+
+.ck-editor__editable {
+    min-height: 250px !important;
+  }
+  
+  .ck{
+    &.ck-reset_all, &.ck-reset_all *{
+      color: var(--#{$prefix}body-color) !important;
+    }
+  
+    &.ck-editor__main>.ck-editor__editable:not(.ck-focused){
+      border-color: $input-border-color !important;
+    }
+  
+    &.ck-toolbar{
+      background-color: var(--#{$prefix}light) !important;
+      border-color: $input-border-color !important;
+  
+      .ck.ck-toolbar__separator{
+        background-color: $input-border-color !important;
+      }
+    }
+  
+    &.ck-tooltip .ck-tooltip__text{
+      background-color: $dark !important;
+      color: $light !important;
+    }
+  
+    &.ck-editor__main>.ck-editor__editable, &.ck-list{
+      background-color: var(--#{$prefix}card-bg) !important;
+    }
+  
+    &.ck-dropdown__panel{
+      border-color: var(--#{$prefix}border-color) !important;
+    }
+    &.ck-responsive-form{
+      background-color: var(--#{$prefix}card-bg) !important;
+    }
+    &.ck-input-text{
+      background-color: var(--#{$prefix}light) !important;
+    }
+    &.ck-dropdown__panel{
+      background-color: var(--#{$prefix}card-bg) !important;
+    }
+    
+  }
+  
+  
+  .ck.ck-button:not(.ck-disabled):hover, a.ck.ck-button:not(.ck-disabled):hover, .ck.ck-button.ck-on, a.ck.ck-button.ck-on{
+    background-color: var(--#{$prefix}light) !important;
+  }
+  
+  
+  
+
+[dir="rtl"] {
+    .ck.ck-toolbar > .ck-toolbar__items {
+        flex-direction: row-reverse;
+    }
+}
+
+
+// dark
+[data-bs-theme ="dark"]{
+  .ck{
+    &.ck-editor__main>.ck-editor__editable{
+      background-color: var(--#{$prefix}body-bg) !important;
+    }
+  }
+}

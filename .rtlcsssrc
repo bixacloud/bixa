@@ -1,0 +1,15 @@
+{
+  "autoRename": true,
+  "stringMap": [
+    {
+      "name": "left-right",
+      "priority": 100,
+      "search": "left",
+      "replace": "right",
+      "options": {
+        "scope": "*",
+        "ignoreCase": false
+      }
+    }
+  ]
+}

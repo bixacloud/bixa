@@ -1,0 +1,1 @@
+<div id="ad-slot-{{ $code }}" class="ad-slot" data-slot="{{ $code }}"></div>

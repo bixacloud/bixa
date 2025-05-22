@@ -1,0 +1,6 @@
+// colors
+[data-bs-theme ="dark"]{
+    .bg-dark{
+        background-color: var(--#{$prefix}sidebar-dark-bg) !important;
+    }
+}

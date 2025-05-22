@@ -1,0 +1,24 @@
+// Z-index
+.z-index {
+    position: relative;
+
+    .box-2 {
+        top: 13px;
+        left: 16px;
+    }
+
+    .box-3 {
+        top: 25px;
+        left: 31px;
+    }
+
+    .box-4 {
+        top: 39px;
+        left: 45px;
+    }
+
+    .box-5 {
+        top: 52px;
+        left: 59px;
+    }
+}

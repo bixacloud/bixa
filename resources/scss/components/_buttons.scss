@@ -1,0 +1,326 @@
+// 
+// _buttons.scss
+// 
+
+button,
+a {
+    outline: none !important;
+}
+
+.btn {
+
+    &:hover,
+    &:active,
+    &:focus,        
+    &.active,
+    &.show {
+        border-color: transparent !important;
+    }
+}
+
+
+
+@mixin button-shadow($color) {
+    box-shadow: 0 2px 6px 0 rgba($color, 0.5);
+}
+
+// Button Shadows
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color} {
+        @include button-shadow($value);
+    }
+}
+
+.btn-warning {
+    color: $white !important;
+}
+
+.btn-outline-light {
+    color: $dark;
+}
+
+//
+// Soft Buttons
+// 
+
+@mixin button-variant-soft($bg) {
+    color: $bg;
+    background-color: rgba($bg, 0.1);
+    border-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background-color: $bg;
+    }
+
+    &:focus {
+        box-shadow:0 2px 6px 0 $btn-focus-width rgba($bg, 0.5) !important;
+    }
+}
+
+@each $color,
+$value in $theme-colors {
+    .btn-soft-#{$color} {
+        @include button-variant-soft($value);
+    }
+}
+
+.btn-soft-light {
+    color: $dark ;
+    background-color: rgba($light, 0.25);
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $dark;
+    }
+}
+
+//
+// Split Dropdown buttons
+// 
+
+@mixin button-variant-split($bg) {
+    background-color: lighten($bg, 5%);
+    border: none;
+}
+
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color}.dropdown-toggle-split {
+        @include button-variant-split($value);
+    }
+}
+
+// Rounded Buttons
+.btn-rounded {
+    border-radius: 30px;
+}
+
+// example 1
+
+.btn-group-example {
+    .btn {
+        position: relative;
+
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        &:before {
+            content: "OR";
+            position: absolute;
+            font-size: 10px;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            border-radius: 50%;
+            background-color: $gray-600;
+            color: $light;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+    }
+}
+
+
+// Example 2
+
+.btn-label {
+    position: relative;
+    padding-left: 44px;
+    border: none;
+
+    .label-icon {
+        position: absolute;
+        width: 32px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($white, 0.15);
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.btn-light {
+        .label-icon {
+            background-color: rgba($dark, 0.1);
+        }
+    }
+
+    &.btn-soft-light {
+        .label-icon {
+            background-color: rgba($dark, 0.05);
+        }
+    }
+}
+
+// theme dark
+[data-bs-theme ="dark"] {
+
+    .btn-light {
+        color: var(--#{$prefix}gray-200);
+        background-color: var(--#{$prefix}light);
+        border-color: var(--#{$prefix}light);
+        box-shadow: 0 2px 6px 0 rgba(var(--#{$prefix}gray-300), 0.5);
+
+        &:hover {
+            color: var(--#{$prefix}gray-200);
+            background-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+            border-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+        }
+    }
+
+    .btn-check:focus+.btn-light,
+    .btn-check:focus+.btn-outline-light,
+    .btn-check:focus+.btn-soft-light,
+    .btn-light:focus,
+    .btn-outline-light:focus,
+    .btn-soft-light:focus {
+        color: var(--#{$prefix}gray-200);
+        background-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+        border-color: rgba(var(--#{$prefix}light-rgb), 0.75);   
+    }
+
+    .btn-check:active+.btn-light,
+    .btn-check:active+.btn-outline-light,
+    .btn-check:active+.btn-soft-light,
+    .btn-check:checked+.btn-light,
+    .btn-check:checked+.btn-outline-light,
+    .btn-check:checked+.btn-soft-light,
+    .btn-light.active,
+    .btn-light:active,
+    .btn-outline-light.active,
+    .btn-outline-light:active,
+    .btn-soft-light.active,
+    .btn-soft-light:active,
+    .show>.btn-light.dropdown-toggle,
+    .show>.btn-outline-light.dropdown-toggle,
+    .show>.btn-soft-light.dropdown-toggle {
+        color: var(--#{$prefix}gray-200);
+        background-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+        border-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+    }
+
+    // dark
+
+    .btn-dark {
+        color: var(--#{$prefix}light);
+        background-color: var(--#{$prefix}gray-200);
+        border-color: var(--#{$prefix}dark);
+
+        &:hover {
+            color: var(--#{$prefix}light);
+            background-color: var(--#{$prefix}gray-200);
+            border-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+        }
+    }
+
+    .btn-check:focus+.btn-dark,
+    .btn-check:focus+.btn-outline-dark,
+    .btn-check:focus+.btn-soft-dark,
+    .btn-dark:focus,
+    .btn-outline-dark:focus,
+    .btn-soft-dark:focus {
+        color: var(--#{$prefix}light);
+        background-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+        border-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+    }
+
+    .btn-check:active+.btn-dark,
+    .btn-check:active+.btn-outline-dark,
+    .btn-check:active+.btn-soft-dark,
+    .btn-check:checked+.btn-dark,
+    .btn-check:checked+.btn-outline-dark,
+    .btn-check:checked+.btn-soft-dark,
+    .btn-dark.active,
+    .btn-dark:active,
+    .btn-outline-dark.active,
+    .btn-outline-dark:active,
+    .btn-soft-dark.active,
+    .btn-soft-dark:active,
+    .show>.btn-dark.dropdown-toggle,
+    .show>.btn-outline-dark.dropdown-toggle,
+    .show>.btn-soft-dark.dropdown-toggle {
+        color: var(--#{$prefix}light);
+        background-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+        border-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+    }
+
+    .btn-check:focus+.btn-light,
+    .btn-light:focus,
+    .btn-check:focus+.btn-outline-light,
+    .btn-outline-light:focus {
+        box-shadow: 0 0 0 $btn-focus-width rgba(var(--#{$prefix}gray-300), .5) !important;
+    }
+
+    // outline
+
+    .btn-outline-light {
+        color: var(--#{$prefix}gray-200);
+        border-color: var(--#{$prefix}light);
+
+        &:hover {
+            color: var(--#{$prefix}gray-200);
+            background-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+            border-color: rgba(var(--#{$prefix}light-rgb), 0.75);
+        }
+    }
+
+    .btn-outline-dark {
+        color: var(--#{$prefix}gray-200);
+        border-color: var(--#{$prefix}gray-200);
+
+        &:hover {
+            color: var(--#{$prefix}light);
+            background-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+            border-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+        }
+    }
+
+    // soft
+
+    .btn-soft-secondary {
+        color: var(--#{$prefix}gray-500);
+
+        &:hover,
+        &:focus {
+            color: var(--#{$prefix}gray-500);
+            border-color: transparent;
+        }
+    }
+
+    .btn-soft-light {
+        color: var(--#{$prefix}--#{$prefix}gray-200) ;
+        background-color: rgba(var(--#{$prefix}light-rgb),8);
+
+        &:hover {
+            color: var(--#{$prefix}gray-200);
+            background-color: var(--#{$prefix}light-rgb);
+        }
+    }
+
+    .btn-soft-dark {
+        color: var(--#{$prefix}gray-200);
+        background-color: rgba(var(--#{$prefix}dark-rgb), 0.75);
+
+        &:hover {
+            color: var(--#{$prefix}light);
+            background-color: var(--#{$prefix}gray-200);
+        }
+    }
+
+    .btn-soft-link{
+        color: var(--#{$prefix}gray-200);
+    }
+}

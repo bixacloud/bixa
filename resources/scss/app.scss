@@ -1,0 +1,77 @@
+/*
+Template Name: Minia - Admin & Dashboard Template
+Author: Themesbrand
+Version: 2.1.0
+Website: https://themesbrand.com/
+Contact: themesbrand@gmail.com
+File: Main Css File
+*/
+
+
+//Fonts
+@import "fonts/fonts";
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "variables-dark";
+@import "./node_modules/bootstrap/scss/mixins.scss";
+
+// Structure
+@import "structure/general";
+@import "structure/topbar";
+@import "structure/page-head";
+@import "structure/footer";
+@import "structure/right-sidebar";
+@import "structure/vertical";
+@import "structure/horizontal-nav";
+@import "structure/layouts";
+
+// Components
+@import "components/root";
+@import "components/waves";
+@import "components/accordion";
+@import "components/avatar";
+@import "components/helper";
+@import "components/modals";
+@import "components/forms";
+@import "components/widgets";
+@import "components/toasts";
+@import "components/demos";
+@import "components/print";
+@import "components/utilities";
+
+// Plugins
+@import "plugins/custom-scrollbar";
+@import "plugins/calendar";
+@import "plugins/session-timeout";
+@import "plugins/range-slider";
+@import "plugins/sweatalert2";
+@import "plugins/alertify";
+@import "plugins/pristinejs";
+@import "plugins/choices";
+@import "plugins/switch";
+@import "plugins/colorpicker";
+@import "plugins/datepicker";
+@import "plugins/form-editors";
+@import "plugins/form-upload";
+@import "plugins/form-wizard";
+@import "plugins/datatable";
+@import "plugins/responsive-table";
+@import "plugins/table-editable";
+@import "plugins/apexcharts";
+@import "plugins/echarts";
+@import "plugins/sparkline-chart";
+@import "plugins/google-map";
+@import "plugins/vector-maps";
+@import "plugins/leaflet-maps";
+
+
+// Pages
+@import "pages/authentication";
+@import "pages/email";
+@import "pages/chat";
+@import "pages/coming-soon";
+@import "pages/timeline";
+@import "pages/extras-pages";
