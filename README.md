@@ -13,7 +13,7 @@
 Bixa is a comprehensive hosting account and support management system designed primarily for MOFH (MyOwnFreeHost). Built with Laravel 11, it provides a robust platform for managing hosting accounts, support tickets, SSL certificates, and more.
 
 [![License](https://img.shields.io/badge/License-GPL_2.0-orange)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.0.1-informational)](https://github.com/bixacloud/Bixa-Laravel/releases/latest)
+[![Version](https://img.shields.io/badge/Version-v2.0.1-informational)](https://github.com/bixacloud/bixa/releases/latest)
 ![Build](https://img.shields.io/badge/Build-Passed-brightgreen)
 ![Framework](https://img.shields.io/badge/Framework-Laravel_11-red)
 ![Interface](https://img.shields.io/badge/Interface-Tabler-lightgreen)
@@ -62,17 +62,17 @@ Your server needs to meet the following minimum requirements:
 - A valid, trusted SSL certificate
 
 ### 💾 Installation 
-For detailed installation instructions, please refer to our comprehensive documentation at [bixa.app/docs/install](https://bixa.app/docs/install).
+For detailed installation instructions, please refer to our comprehensive documentation at [bixa.app/docs/#/install](https://bixa.app/docs/#/install).
 
 In brief:
-1. Download the latest release from our [GitHub repository](https://github.com/bixacloud/Bixa-Laravel/releases/latest)
+1. Download the latest release from our [GitHub repository](https://github.com/bixacloud/bixa/releases/latest)
 2. Upload to your web hosting account and create a database
 3. Configure the `.env` file manually with your database settings
 4. Import the included `bixa.sql` file to your database using phpMyAdmin
 5. Configure the `.htaccess` file for proper URL routing
 6. Use the included demo account to log in, then change your credentials
 
-No automatic installer is available - configuration must be done manually as described in our [installation guide](https://bixa.app/docs/installation/manual-setup).
+No automatic installer is available - configuration must be done manually as described in our [installation guide](https://bixa.app/docs/#/install).
 
 ### 📧 SMTP Services
 Here are some recommended SMTP services with free tiers that work well with Bixa:
@@ -86,13 +86,12 @@ Here are some recommended SMTP services with free tiers that work well with Bixa
 For comprehensive documentation covering all aspects of using and administering Bixa, please visit our official documentation at [bixa.app/docs](https://bixa.app/docs).
 
 The documentation includes:
-- [User Guide](https://bixa.app/docs/user)
-- [Admin Guide](https://bixa.app/docs/admin)
-- [API Documentation](https://bixa.app/docs/api)
+- [User Guide](https://bixa.app/docs/#/user)
+- [Admin Guide](https://bixa.app/docs/#/admin)
 
 ## 🤔 Need Help?
 
-- [Open an issue](https://github.com/bixacloud/Bixa-Laravel/issues/new) if you've discovered a bug or have a feature request
+- [Open an issue](https://github.com/bixacloud/bixa/issues/new) if you've discovered a bug or have a feature request
 - Join our [Telegram group](https://t.me/bixacloud) for community support and discussions
 - English is the primary language for communication
 
