@@ -46,11 +46,16 @@ Bixa is a comprehensive hosting account and support management system designed p
 - **Data Migration**: Import data from older platform versions
 
 ### 🔌 Integrations
-- MOFH (MyOwnFreeHost)
-- Iconcaptcha for form protection
-- ACMEv2 SSL certificate provider (Let's Encrypt)
-- Site.Pro website builder
-- SMTP email services
+    - MOFH (MyOwnFreeHost)
+	- Google reCAPTCHA
+	- IconCaptcha
+ 	- PageSpeed Insights
+  	- Imgur API (Ticket Image Upload)
+ 	- Separate WebFTP  
+	- Cloudflare DNS
+	- ACMEv2 (Let's Encrypt)
+	- Site.Pro
+	- SMTP
 
 ## 🚀 Getting Started
 
