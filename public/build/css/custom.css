@@ -1,0 +1,6 @@
+.ad-slot {
+            min-height: 10px;
+            width: 100%;
+            display: block;
+            overflow: hidden;
+        }

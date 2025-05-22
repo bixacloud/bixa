@@ -1,0 +1,42 @@
+/**
+ * IconCaptcha Styles
+ * Consistent styling for IconCaptcha widgets across the application
+ */
+
+/* Container styling */
+.iconcaptcha-widget {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    min-height: 90px;
+}
+
+/* Success state styling */
+#verification-status.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-color: #badbcc;
+}
+
+/* Verification container */
+.verification-container {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Animation for success state */
+@keyframes verification-success {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.verification-status.success {
+    animation: verification-success 0.5s ease;
+}
