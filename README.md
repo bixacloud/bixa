@@ -62,7 +62,7 @@ Your server needs to meet the following minimum requirements:
 - A valid, trusted SSL certificate
 
 ### 💾 Installation 
-For detailed installation instructions, please refer to our comprehensive documentation at [bixa.app/docs/installation](https://bixa.app/docs/install).
+For detailed installation instructions, please refer to our comprehensive documentation at [https://bixa.app/docs/#/install](https://bixa.app/docs/#/install).
 
 In brief:
 1. Download the latest release from our [GitHub repository](https://github.com/bixacloud/bixa/releases/latest)
@@ -73,7 +73,7 @@ In brief:
 6. Import the included `bixa.sql` file to your database using phpMyAdmin
 7. Use the included demo account to log in, then change your credentials
 
-No automatic installer is available - configuration must be done manually as described in our [installation guide](https://bixa.app/docs/install).
+No automatic installer is available - configuration must be done manually as described in our [installation guide](https://bixa.app/docs/#/install/).
 
 ### 📧 SMTP Services
 Here are some recommended SMTP services with free tiers that work well with Bixa:
@@ -87,9 +87,9 @@ Here are some recommended SMTP services with free tiers that work well with Bixa
 For comprehensive documentation covering all aspects of using and administering Bixa, please visit our official documentation at [bixa.app/docs](https://bixa.app/docs).
 
 The documentation includes:
-- [User Guide](https://bixa.app/docs/user)
-- [Admin Guide](https://bixa.app/docs/admin)
-- [API Documentation](https://bixa.app/docs/api)
+- [User Guide](https://bixa.app/docs/#/user/)
+- [Admin Guide](https://bixa.app/docs/#/admin/)
+- [API Documentation](https://bixa.app/docs/#/api/)
 
 ## 🤔 Need Help?
 
