@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="public/build/images/logo.svg" width="250px">
+    <img src="https://bixa.app/docs/logo.png" width="250px">
 </div>
 
 # Bixa - Hosting Management Platform
@@ -43,14 +43,40 @@ Bixa is a comprehensive hosting account and support management system designed p
 - **Advertising Management**: Control on-site advertisements
 - **Domain Management**: Manage allowed domain extensions
 - **Email Templates**: Customize system-generated emails
-- **Data Migration**: Import data from older platform versions
-
-### 🔌 Integrations
-- MOFH (MyOwnFreeHost)
-- Iconcaptcha for form protection
-- ACMEv2 SSL certificate provider (Let's Encrypt)
-- Site.Pro website builder
-- SMTP email services
+- **Integrations**
+	- MOFH (MyOwnFreeHost)
+	- Google reCAPTCHA 
+	- hCaptcha
+	- IconCaptcha
+ 	- PageSpeed Insights
+  	- Imgur API (Ticket Image Upload)
+ 	- Separate WebFTP  
+	- Cloudflare DNS
+	- ACMEv2 (Let's Encrypt)
+	- Site.Pro
+	- SMTP
+- **Tools**
+	- Case Converter
+	- Code Beautifier
+ 	- Code Minifier
+	- Colour Tools
+	- Base64 Encoder
+ 	- Base64 Decoder
+	- SQL Formatter
+	- CDN Library Search
+	- Website Speed Test
+	- CSS Grid Generator
+	- Froala License Generator
+	- WHOIS Domain
+	- WHOIS Domain (Check Multiple Domains)
+- **0Auth Logins**
+	- Facebook Login
+ 	- Google Login
+- **Data Migration Tool** (BIXA Old Version & XERA Support)
+- **Auto SSL For All Subdomains**
+- **Authentication Logs**
+- **Update Manager**
+- **Multi-lingual**
 
 ## 🚀 Getting Started
 
@@ -65,15 +91,12 @@ Your server needs to meet the following minimum requirements:
 For detailed installation instructions, please refer to our comprehensive documentation at [bixa.app/docs/installation](https://bixa.app/docs/install).
 
 In brief:
-1. Download the latest release from our [GitHub repository](https://github.com/bixacloud/bixa/releases/latest)
-2. Install PHP dependencies using Composer (see installation guide for VPS vs cPanel instructions)
-3. Upload to your web hosting account and create a database
-4. Configure the `.env` file manually with your database settings
-5. Configure the `.htaccess` file for proper URL routing
-6. Import the included `bixa.sql` file to your database using phpMyAdmin
-7. Use the included demo account to log in, then change your credentials
-
-No automatic installer is available - configuration must be done manually as described in our [installation guide](https://bixa.app/docs/install).
+1. Download the latest release from our [GitHub repository](https://github.com/bixacloud/bixa/releases/latest).
+2. Upload the downloaded file to the server and extract it.
+3. Go to ```https://{your.domain}/install``` and click on the 'Start Installation' button.
+4.  Set your website's ```Website URL``` and hit the 'Next' button.
+5.  Edit the database credentials and click on the 'Next' button (this will automatically import tables and records to the database).
+6.  Installation completed and shows admin details (**Remember**: After completing the installation, please delete the "Install" folder from your public_html/public directory for security reasons.).
 
 ### 📧 SMTP Services
 Here are some recommended SMTP services with free tiers that work well with Bixa:
