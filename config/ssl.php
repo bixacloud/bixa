@@ -12,7 +12,7 @@ return [
         ],
         
         'googletrust' => [
-            'url' => env('GOOGLETRUST_URL', 'https://dv.acme-v02.api.pki.goog/directory'),
+            'url' => env('GOOGLETRUST_URL', '#'),
         ],
     ],
 
@@ -22,7 +22,7 @@ return [
     ],
 
     'renewal' => [
-        'days_before' => env('SSL_RENEWAL_DAYS', 30), // Số ngày trước khi hết hạn sẽ gia hạn
-        'notification_email' => env('SSL_NOTIFICATION_EMAIL'), // Email nhận thông báo
+        'days_before' => env('SSL_RENEWAL_DAYS', 30), 
+        'notification_email' => env('SSL_NOTIFICATION_EMAIL'), 
     ],
 ];
