@@ -865,7 +865,7 @@ $title = isset($steps[$step]) ? 'Step ' . $step . ': ' . $steps[$step] : 'BIXA I
                                 <?php endforeach; ?>
                             </ul>
                             <small style="color: #10b981;">
-                                ✅ Found <?= count($updateFiles) ?> update file(s) that will be applied after main installation.
+                                Found <?= count($updateFiles) ?> update file(s) that will be applied after main installation.
                             </small>
                         <?php else: ?>
                             <p><strong>Update Files:</strong> <span style="color: #6b7280;">None detected</span></p>
@@ -1217,11 +1217,11 @@ ENV;
                     <div class="alert alert-info">
                         <i class="fas fa-terminal"></i>
                         <div>
-                            <strong>🚀 Final Step Required:</strong> Run this command from your terminal:
+                            <strong>Final Step Required:</strong> Run this command from your terminal:
                             <div class="command-box" onclick="copyCommand()">
                                 $ composer install --no-dev --optimize-autoloader
                             </div>
-                            <div class="copy-hint">💡 Click to copy</div>
+                            <div class="copy-hint">Click to copy</div>
                         </div>
                     </div>
                     
@@ -1239,7 +1239,7 @@ ENV;
                                 navigator.clipboard.writeText(command).then(() => {
                                     const box = document.querySelector('.command-box');
                                     const original = box.innerHTML;
-                                    box.innerHTML = '✅ Copied!';
+                                    box.innerHTML = 'Copied!';
                                     setTimeout(() => {
                                         box.innerHTML = original;
                                     }, 2000);
@@ -1274,11 +1274,12 @@ ENV;
         <div class="footer">
             <p>
                 <strong>BIXA</strong> - Professional Free Hosting Panel<br>
-                Created by <a href="https://github.com/bixacloud" target="_blank">Bixa</a> • 
+                Created by <a href="https://github.com/bixacloud" target="_blank">Bixa & Itsmerosu</a> • 
                 <a href="https://github.com/bixacloud/bixa" target="_blank">GitHub</a> • 
                 <a href="https://t.me/bixacloud" target="_blank">Telegram</a>
             </p>
         </div>
     </div>
 </body>
+
 </html>
